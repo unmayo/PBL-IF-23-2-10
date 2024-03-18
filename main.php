@@ -22,8 +22,8 @@
         align-items: center;
     }
     .profile-image {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         margin-right: 20px;
     }
@@ -63,7 +63,7 @@
         left: -250px;
         top: 0;
         bottom: 0;
-        width: 250px;
+        width: 200px;
         background-color: #333;
         transition: left 0.3s ease-in-out;
     }
@@ -113,6 +113,7 @@
 </div>
 
 <script>
+    // Function to toggle sidebar visibility
     function toggleSidebar() {
         var sidebar = document.getElementById('sidebar');
         if (sidebar.style.left === '0px') {
@@ -121,6 +122,17 @@
             sidebar.style.left = '0px';
         }
     }
+
+    // Function to close sidebar when clicking outside of it
+    document.addEventListener('click', function(event) {
+        var sidebar = document.getElementById('sidebar');
+        var target = event.target;
+
+        // Check if the click occurred outside of the sidebar and not the toggle button
+        if (sidebar.style.left === '0px' && !target.closest('.sidebar') && !target.closest('.bottom-bar')) {
+            sidebar.style.left = '-250px';
+        }
+    });
 </script>
 
 </body>

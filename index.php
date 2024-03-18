@@ -11,46 +11,45 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(to bottom, #FFAE4D, #F3E493);
             text-align: center;
-            height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
+            align-items: center; /* Center items vertically */
+            height: 100vh; /* Full height of the viewport */
+            overflow-x: hidden;
         }
         .container {
-            padding: 20px;
-            max-width: 600px;
-            margin: auto;
+            padding: 10px;
+            max-width: 80%;
         }
         .description {
-            margin-top: 20px;
+            margin-top: 10px;
             text-align: left;
+            font-size: 14px;
         }
-        /* Circular button */
         .button {
-            margin-top: 20px;
+            margin-top: 10px;
             background-color: #FFFFFF;
             border: none;
             color: #0D0140;
-            padding: 15px;
+            padding: 10px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
-            font-size: 24px;
-            border-radius: 50%; /* Makes it circular */
+            font-size: 18px;
+            border-radius: 50%;
             cursor: pointer;
-            transition: background-color 0.3s ease; /* Transition effect for color change */
+            transition: background-color 0.3s ease;
         }
         .button:hover {
-            background-color: #8F7DDC; /* Darker color on hover */
+            background-color: #8F7DDC;
         }
         .title {
-            margin-top: 20px;
-            font-size: 32px; /* Increased font size */
+            margin-top: 10px;
+            font-size: 24px;
             font-weight: bold;
-            font-family: "Arial Black", sans-serif; /* Changed font family */
-            animation: pulse 2s infinite alternate; /* Pulsating effect */
+            font-family: "Arial Black", sans-serif;
+            animation: pulse 2s infinite alternate;
         }
-        /* Animation for pulsating effect */
         @keyframes pulse {
             0% {
                 transform: scale(1);
@@ -59,13 +58,12 @@
                 transform: scale(1.1);
             }
         }
-        /* Animation */
         @keyframes float {
             0% {
                 transform: translateY(0);
             }
             50% {
-                transform: translateY(-10px);
+                transform: translateY(-5px);
             }
             100% {
                 transform: translateY(0);
@@ -73,22 +71,36 @@
         }
         .floating-svg {
             animation: float 3s infinite;
+            width: 100%;
         }
-        /* Hover effect for SVG image */
         .floating-svg:hover {
-            transform: scale(1.05); /* Scale up slightly on hover */
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                max-width: 90%;
+            }
+            .button {
+                font-size: 16px;
+            }
+            .title {
+                font-size: 20px;
+            }
+            .description {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Welcome to Our Landing Page</h1>
-        <img src="asset/landingpage1.svg" alt="SVG Image" width="400" class="floating-svg"> <!-- Added class for animation -->
-        <h2>Description</h2> <!-- Changed h2 back to normal -->
+        <h1 class="title">Welcome to Polibatam Store</h1>
+        <img src="asset/landingpage1.svg" alt="SVG Image" class="floating-svg">
+        <h2>Description</h2>
         <div class="description">
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </div>
-        <!-- Button now is an anchor tag linking to login.php -->
         <a href="login.php" class="button" onclick="this.classList.add('pressed'); setTimeout(() => this.classList.remove('pressed'), 300)">&gt;</a>
     </div>
 </body>
